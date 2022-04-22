@@ -64,9 +64,51 @@ public class Principal {
 			JOptionPane.showMessageDialog(null, "Membro cadastrado com sucesso!");
 	}
 	
+//	public static void cadastrarPessoaFisica() {
+//		String nome = JOptionPane.showInputDialog("Informe o nome: ");
+//		String cpf = JOptionPane.showInputDialog("Informe o cpf: ");
+//		Pessoa p = new PessoaFisica(nome, cpf);
+//		addMembroCadastro(p);	
+//	}
+
+//	public static void cadastrarPessoaFisica() {
+//		String nome = JOptionPane.showInputDialog("informe o nome: ");
+//		if (nome.equals("")) {
+//			throw new CampoEmBrancoException("Campo em Branco");
+//		}
+//		String cpf = JOptionPane.showInputDialog("Informe o cpf: ");
+//		if (cpf.equals("")) {
+//			throw new CampoEmBrancoException("Campo em Branco");
+//		}
+//		Pessoa p = new PessoaFisica(nome, cpf);
+//		addMembroCadastro(p);	
+//	}
+
+
 	public static void cadastrarPessoaFisica() {
-		String nome = JOptionPane.showInputDialog("Informe o nome: ");
-		String cpf = JOptionPane.showInputDialog("Informe o cpf: ");
+		boolean repetir = false;
+		String nome = null, cpf = null;
+		do {
+			repetir = false;
+			try {
+				String n = JOptionPane.showInputDialog("Informe o nome: ");
+				if (n.equals("") | n.equals(null)) {
+					throw new CampoEmBrancoException ("Campo em Branco");
+				}
+				nome = n;
+
+				String c = JOptionPane.showInputDialog("Informe o cpf: ");
+				if (c.equals("") | c.equals(null)) {
+					throw new CampoEmBrancoException ("Campo em Branco"); 
+				}
+				cpf = c;
+				
+			} catch (NullPointerException | CampoEmBrancoException ex) {
+				String msg = ex.getMessage();
+				System.out.println("Exception " + msg);
+				repetir = true;
+			}
+		} while (repetir);
 		Pessoa p = new PessoaFisica(nome, cpf);
 		addMembroCadastro(p);	
 	}
