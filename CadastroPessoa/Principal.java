@@ -64,27 +64,6 @@ public class Principal {
 			JOptionPane.showMessageDialog(null, "Membro cadastrado com sucesso!");
 	}
 	
-//	public static void cadastrarPessoaFisica() {
-//		String nome = JOptionPane.showInputDialog("Informe o nome: ");
-//		String cpf = JOptionPane.showInputDialog("Informe o cpf: ");
-//		Pessoa p = new PessoaFisica(nome, cpf);
-//		addMembroCadastro(p);	
-//	}
-
-//	public static void cadastrarPessoaFisica() {
-//		String nome = JOptionPane.showInputDialog("informe o nome: ");
-//		if (nome.equals("")) {
-//			throw new CampoEmBrancoException("Campo em Branco");
-//		}
-//		String cpf = JOptionPane.showInputDialog("Informe o cpf: ");
-//		if (cpf.equals("")) {
-//			throw new CampoEmBrancoException("Campo em Branco");
-//		}
-//		Pessoa p = new PessoaFisica(nome, cpf);
-//		addMembroCadastro(p);	
-//	}
-
-
 	public static void cadastrarPessoaFisica() {
 		boolean repetir = false;
 		String nome = null, cpf = null;
